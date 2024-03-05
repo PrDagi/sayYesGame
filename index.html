@@ -15,7 +15,7 @@
             position: relative;
         }
 
-        .chat-bg {
+        .chat-bg,.chat-bg-2 {
             margin: 0;
             height: 100vh;
             background-image: url(assets/imgs/romance-6781983.jpg);
@@ -23,7 +23,11 @@
             background-position: 0px 35%;
             background-repeat: no-repeat;
             opacity: 0.9;
-            transition: 0.3;
+        }
+
+        .chat-bg-2 {
+            background-image: url('assets/imgs/yeyesyes.gif');
+            opacity: 0.6;
         }
 
         .chat-1,
@@ -80,7 +84,7 @@
 </head>
 
 <body>
-    <div class="chat-bg"></div>
+    <div class="bg chat-bg"></div>
 
     <div class="chat-0">
         <div class="card w-100">
@@ -126,9 +130,8 @@
         yes.addEventListener("click", () => {
             chat1.textContent = 'yes yes yes!! let\'s go'
             document.querySelector(".reply").style.display = "none"
-            document.querySelector(".chat-bg").style.backgroundImage = "url('assets/imgs/yeyesyes.gif')";
-            document.querySelector(".chat-bg").style.backgroundPosition = "0 35%";
-            document.querySelector(".chat-bg").style.opacity = "0.6";
+            document.querySelector(".bg").classList.remove("chat-bg")
+            document.querySelector(".bg").classList.add("chat-bg-2")
         })
     </script>
 </body>
