@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>እስኪ እምቢ በይ - Game</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .chat-bg {
+            margin: 0;
+            height: 100vh;
+            background-image: url(assets/imgs/romance-6781983.jpg);
+            background-size: cover;
+            background-position: 0px 35%;
+            background-repeat: no-repeat;
+            opacity: 0.9;
+        }
+
+        .chat-1,
+        .chat-2,
+        .chat-0 {
+            position: absolute;
+        }
+
+        .chat-0 {
+            top: 5%;
+            left: 40%;
+        }
+
+        .chat-1 {
+            top: 26%;
+            left: 26%;
+        }
+
+        .chat-2 {
+            top: 55%;
+            left: 55%;
+        }
+
+        .btn-primary {
+            background-color: #BF871F;
+            cursor: pointer;
+        }
+
+        .card {
+            background-color: #882400d0;
+            color: #fff;
+            border-radius: 16px;
+        }
+
+        #no {
+            position: absolute;
+            transition: .1s;
+        }
+
+        img.bg {
+            width: 500px;
+            height: 130px;
+        }
+
+        p.msg {
+            position: relative;
+            top: -110px;
+            left: 25%;
+            width: 50%;
+            font-weight: 400;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chat-bg"></div>
+
+    <div class="chat-0">
+        <div class="card w-100">
+            <div class="card-body">
+                <p class="card-text">እስኪ እሺ በይ - Game</p>
+            </div>
+        </div>
+    </div>
+    <div class="chat-1 chat">
+        <image src="assets/imgs/speech_bubble.png" class="bg">
+            <p class="msg">ጨዋታው 'እሺ' አለማለት ነው:: እንጀምር?</p>
+    </div>
+    <div class="chat-2">
+        <div class="card w-100">
+            <div class="card-body reply">
+                <button id="start" class="btn btn-primary">እንጀምር</button>
+                <button id="yes" class="btn btn-primary mr-2" style="display: none;">እሺ</button>
+                <button id="no" class="btn btn-primary" style="display: none;">እምቢ</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const noBtn = document.getElementById('no');
+        const yesBtn = document.getElementById('yes');
+        const startBtn = document.getElementById('start')
+        const chat1 = document.querySelector(".chat-1 p")
+
+        startBtn.addEventListener("click", function () {
+            chat1.textContent = "የምትወጂውን Chocolate ገዝቼልሽ, በገንደጄ street walk እናርግ?"
+            this.style.display = "none"
+            yesBtn.style.display = "inline"
+            noBtn.style.display = "inline"
+        })
+        noBtn.addEventListener('mouseover', function () {
+            const leftPos = Math.random() * 450;
+            const topPos = Math.random() * 250;
+
+            // Set the button's position
+            noBtn.style.left = `${leftPos}%`;
+            noBtn.style.top = `${topPos}%`;
+            chat1.textContent = 'እሺ በይ!!!(please)'
+        })
+        yes.addEventListener("click", () => {
+            chat1.textContent = 'yes yes yes!! let\'s go'
+            document.querySelector(".reply").style.display = "none"
+            document.querySelector(".chat-bg").style.backgroundImage = "url('assets/imgs/yeyesyes.gif')";
+            document.querySelector(".chat-bg").style.backgroundPosition = "0 35%";
+            document.querySelector(".chat-bg").style.opacity = "0.6";
+        })
+    </script>
+</body>
+
+</html>
